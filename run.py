@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from tvc_tools.google_api.forms import GoogleFormsAPIService
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     google_forms_service = GoogleFormsAPIService()
     form_id, form_url = google_forms_service.create_form(
         title="Test Form",
