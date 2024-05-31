@@ -1,0 +1,39 @@
+*.swp
+*.pyc
+__pycache__
+*.mo
+.DS_Store
+
+.pytest_cache
+.pytype
+.ruff_cache
+
+
+# Locally installed NodeJS modules
+/node_modules
+
+# locally installed virtualenv - for CI environment which needs isolated
+# virtualenvs.
+/virtenv
+/venv
+/.venv
+
+# Temp files, e.g. mirroring cloud assets to local
+# https://github.com/mathspace/mathspace/wiki/AWS-S3-Buckets
+tmp
+**/tmp/
+
+
+# direnv - https://direnv.net/
+.envrc
+
+# pipenv - https://docs.pipenv.org/
+.env
+Pipfile
+Pipfile.lock
+
+
+secrets.json
+
+# 
+credentials/*
