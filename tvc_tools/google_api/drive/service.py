@@ -18,9 +18,13 @@ class GoogleDriveAPIService(GoogleAPIMixin):
         super().__init__()
         self.drive_service = build("drive", "v3", credentials=self.credentials)
 
+    def copy_file(self, file_id: str, name: str):
+        file = {"name": name}
+        result = self.drive_service.files().copy(fileId=file_id, body=file).execute()
+        return result
+
     def share_file(self, file_id: str, permission: list[Permission]):
         for perm in permission:
-            # Share the form with a specific user
             user_permission = {
                 "type": perm["type"],
                 "role": perm["role"],
