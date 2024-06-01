@@ -1,0 +1,56 @@
+[tool.ruff]
+extend-exclude = [
+    ".venv",
+    ".idea",
+    ".vscode",
+]
+output-format = "grouped"
+line-length = 88
+fix = false
+target-version = "py312"
+
+[tool.ruff.lint]
+extend-select = [
+    "C90", # mccabe
+    "E",   # pycodestyle
+    "F",   # pyflakes
+    "I",   # isort
+    "ISC", # flake8-implicit-str-concat
+    "ICN", # flake8-import-conventions
+    "RUF", # ruff
+    "T10", # flake8-debugger
+    "UP",  # pyupgrade
+    "W",   # pycodestyle
+]
+ignore = [
+    "C901", # too complex
+    "E501", # line too long
+    "F811", # redefinition of unused
+    "W",    # pycodestyle warnings
+
+    "E713", # test for membership should be 'not in'
+    "E714", # test for object identity should be 'is not'
+    "E741", # ambiguous variable name
+
+    "ISC001", # single-line-implicit-string-concatenation (Clashes with Formatted strings)
+
+    "UP031",  # Use format specifiers instead of percent format
+    "UP032",  # Broken between MacOS and Linux
+    "UP038",  # Use `X | Y` in `isinstance` call instead of `(X, Y)`
+    "RUF001", # String contains ambiguous unicode character `
+    "RUF002", # Docstring contains ambiguous unicode character `
+    "RUF003", # Comment contains ambiguous unicode character `
+    "RUF005", # Consider spread instead of concatenation
+    "RUF007", # Prefer `itertools.pairwise()` over `zip()` when iterating over successive pairs
+    "RUF100", # Unused `noqa` directive
+    "RUF012", # Clashes with django Meta class declaration
+
+]
+unfixable = []
+
+[tool.ruff.format]
+indent-style = "space"
+line-ending = "lf"
+preview = false
+quote-style = "double"
+skip-magic-trailing-comma = false
